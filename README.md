@@ -1,1 +1,1 @@
-en şiyisi
+en iyisi değilim ben en iyisiyidiim
