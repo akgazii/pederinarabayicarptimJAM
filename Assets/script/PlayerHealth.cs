@@ -1,7 +1,7 @@
 using UnityEngine;
-
 public class PlayerHealth : MonoBehaviour
 {
+    
     public int maxHealth = 5;
     public int currentHealth;
 
@@ -14,7 +14,10 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= amount;
         if (currentHealth < 0) currentHealth = 0;
-        Debug.Log("Hasar alındı! Can: " + currentHealth);
+        {
+            Debug.Log("Hasar alındı! Can: " + currentHealth);
+        }
+        //111111111111111111111111
     }
 
     public void Heal(int amount)
@@ -22,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth += amount;
         if (currentHealth > maxHealth) currentHealth = maxHealth;
         Debug.Log("İyileşti! Can: " + currentHealth);
+
     }
 
     void Update()
