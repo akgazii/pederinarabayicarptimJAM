@@ -8,6 +8,8 @@ public class box : MonoBehaviour
     private bool isGrounded;
     private SpriteRenderer spriteRenderer;
 
+    [SerializeField] private Animator animator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,6 +33,14 @@ public class box : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             rb.AddForce(Vector2.up * zipla, ForceMode2D.Impulse);
+        }
+        if (move != 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        if (move != 1)
+        {
+            animator.SetBool("isRunning", false);
         }
     }
 
