@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Deatharea
+  - FunGround
   layers:
   - Default
   - TransparentFX
