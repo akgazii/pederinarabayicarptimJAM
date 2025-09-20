@@ -19,7 +19,6 @@ public class PlayerHealth : MonoBehaviour
 
         Debug.Log("Hasar alındı! Can: " + currentHealth);
 
-        // Can sıfıra düşünce bir kere çalışsın
         if (currentHealth <= 0 && !isDead)
         {
             isDead = true;
@@ -38,10 +37,10 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-            TakeDamage(1);
+      //  if (Input.GetKeyDown(KeyCode.H))
+      //      TakeDamage(1);
 
-        if (Input.GetKeyDown(KeyCode.L))
-            Heal(1);
+      //  if (Input.GetKeyDown(KeyCode.L))
+      //      Heal(1);
     }
 }
