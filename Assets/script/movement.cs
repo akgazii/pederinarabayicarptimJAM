@@ -1,3 +1,4 @@
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class box : MonoBehaviour
@@ -9,7 +10,6 @@ public class box : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     [SerializeField] private Animator animator;
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,7 +38,7 @@ public class box : MonoBehaviour
         {
             animator.SetBool("isRunning", true);
         }
-        if (move != 1)
+        else
         {
             animator.SetBool("isRunning", false);
         }
