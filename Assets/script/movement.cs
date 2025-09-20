@@ -23,13 +23,13 @@ public class PlayerMovement : MonoBehaviour
     {
         float move = Input.GetAxisRaw("Horizontal");
 
-        // Yatay hareket
+       
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
 
-        // Animasyon koşma kontrolü
+      
         animator.SetBool("isRunning", move != 0);
 
-        // Karakter yönünü döndürme (scale ile)
+       
         if (move > 0 && !facingRight)
             Flip();
         else if (move < 0 && facingRight)
@@ -49,12 +49,20 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
     }
 
+   
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
             isGrounded = true;
     }
 
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+            isGrounded = true;
+    }
+
+   
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
