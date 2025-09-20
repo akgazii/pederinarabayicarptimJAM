@@ -288,6 +288,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 329807257}
+  - {fileID: 197829784}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &66275597
@@ -331,6 +332,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6.5
   jumpForce: 13
+  maxYVelocity: 15
+  groundCheck: {fileID: 197829784}
+  groundCheckRadius: 0.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!114 &66275599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,7 +475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firepoint: {fileID: 329807257}
   bulletPrefab: {fileID: 6736720764291455961, guid: 26f1a1a61a42ab54385818f79a05272e, type: 3}
-  fireCooldown: 0.8
+  fireCooldown: 0.6
 --- !u!1 &185742711
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +488,7 @@ GameObject:
   - component: {fileID: 185742714}
   - component: {fileID: 185742713}
   - component: {fileID: 185742715}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -11969,6 +11976,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186797842}
   m_CullTransparentMesh: 1
+--- !u!1 &197829783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 197829784}
+  m_Layer: 0
+  m_Name: groundcheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &197829784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197829783}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.09, y: -1.47, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 66275595}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &201194130
 GameObject:
   m_ObjectHideFlags: 0
