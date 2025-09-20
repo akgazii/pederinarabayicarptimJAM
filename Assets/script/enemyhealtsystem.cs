@@ -21,7 +21,12 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+    void Die()
+    {
+        // Instantiate(deathEffect, transform.position, Quaternion.identity);
+         Destroy(gameObject);
     }
 }
