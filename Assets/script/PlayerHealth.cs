@@ -12,21 +12,17 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(int amount)
+   public void TakeDamage(int amount)
+{
+    currentHealth -= amount;
+    if (currentHealth < 0) currentHealth = 0;
+
+    if (currentHealth <= 0 && !isDead)
     {
-        currentHealth -= amount;
-        if (currentHealth < 0) currentHealth = 0;
-
-        Debug.Log("Hasar alındı! Can: " + currentHealth);
-
-        if (currentHealth <= 0 && !isDead)
-        {
-            isDead = true;
-            gameManager.gameover();
-            Debug.Log("Dead");
-            Time.timeScale = 0;
-        }
+        isDead = true;
+        gameManager.gameover(); // artık sadece ekran açacak
     }
+}
 
     public void Heal(int amount)
     {

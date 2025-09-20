@@ -6,31 +6,35 @@ using UnityEngine.SceneManagement;
 public class GameManagerScript : MonoBehaviour
 {
     public GameObject gameoverUI;
+    private PlayerRespawn playerRespawn;
 
-    // Start is called before the first frame update
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        playerRespawn = FindObjectOfType<PlayerRespawn>(); // Oyuncuyu bul
     }
 
     public void gameover()
     {
         gameoverUI.SetActive(true);
+        Time.timeScale = 0f; // oyun durdurulsun
     }
+
     public void restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }
+
     public void mainmanu()
     {
         SceneManager.LoadScene("Menu");
         Time.timeScale = 1;
+    }
+
+    public void respawn()
+    {
+        Time.timeScale = 1;
+        gameoverUI.SetActive(false);
+        playerRespawn.Respawn(); // Player’ı checkpointten doğur
     }
 }
