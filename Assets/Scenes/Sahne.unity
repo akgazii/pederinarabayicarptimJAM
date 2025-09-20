@@ -552,6 +552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firepoint: {fileID: 329807257}
   bulletPrefab: {fileID: 6736720764291455961, guid: 26f1a1a61a42ab54385818f79a05272e, type: 3}
+  fireCooldown: 0.8
 --- !u!1 &91408907
 GameObject:
   m_ObjectHideFlags: 0
@@ -2783,8 +2784,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8505669f5d9f4c4428452838bf6f1aae, type: 3}
   - {fileID: 21300000, guid: 47457d7f0cdc2b149b0444cfbc5a13a8, type: 3}
   frameTime: 0.3
-  chargeDelay: 1.5
-  attackForce: 10
+  chargeDelay: 2
+  attackForce: 8
   player: {fileID: 66275595}
 --- !u!114 &1053680469
 MonoBehaviour:
@@ -2798,7 +2799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf3e3c85f8ef154d9b807af20a6bf8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 7
   currentHealth: 0
 --- !u!1 &1114057982
 GameObject:
