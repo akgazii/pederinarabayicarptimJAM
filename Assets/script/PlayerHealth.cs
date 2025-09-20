@@ -25,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
             isDead = true;
             gameManager.gameover();
             Debug.Log("Dead");
+            Time.timeScale = 0;
         }
     }
 
