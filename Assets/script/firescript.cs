@@ -1,18 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class firescript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform firepoint;
+    public GameObject bulletPrefab;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Shoot();
+        }
+    }
+    void Shoot()
+    {
+        Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
     }
 }

@@ -46,9 +46,7 @@ public class PlayerMovement : MonoBehaviour
     void Flip()
     {
         facingRight = !facingRight;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1; // X ekseninde ters çevir
-        transform.localScale = scale;
+        transform.Rotate(0f, 180f, 0f);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
